@@ -1,0 +1,8 @@
+Maciek#duzylotek#5,8,12,18,20,31
+Maciek#duzylotek#1,2,3,4,5,6
+Maciek#duzylotekplus#1,2,3,4,5,6
+Maciek#minilotek#7,8,9,10,11,12
+Katarzyna#duzylotek#5,8,12,18,20,31
+Katarzyna#duzylotek#1,2,3,4,5,6
+Katrzyna#duzylotekplus#1,2,3,4,5,6
+Katarzyna#minilotek#7,8,9,10,11,12
