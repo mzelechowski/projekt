@@ -25,11 +25,12 @@ public class CustomFileProvider {
         System.out.println(line);
         line = bufferedReader.readLine();
       }
-
+      bufferedReader.close();
     } catch (IOException e) {
       //System.out.println(e.getMessage());
       e.printStackTrace(); //drukuje stack błędu
     }
+    
     
   }
 
