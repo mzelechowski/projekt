@@ -30,7 +30,8 @@ public class CustomFileProvider {
       //System.out.println(e.getMessage());
       e.printStackTrace(); //drukuje stack błędu
     }
-    
+
+
     
   }
 
