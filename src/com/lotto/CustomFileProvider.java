@@ -3,9 +3,12 @@ package com.lotto;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.OpenOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class CustomFileProvider {
@@ -35,13 +38,14 @@ public class CustomFileProvider {
       e.printStackTrace(); //drukuje stack błędu
     }
      }
-
+/**Tworzenie nowego pliku*/
   public void writeFileBasic(String fileName) {
     File file = new File(path + fileName);
 
     try {
       if (file.createNewFile()) {
         System.out.println("file created: " + file.getAbsolutePath());
+
       }else{
         System.out.println("Nie utworzo pliku");
       }
@@ -51,6 +55,15 @@ public class CustomFileProvider {
   }
   /** zapisywanie do pliku z podanie wartosci w formie Listr<String> */
   public void createFileFromCollection(String filename, List<String> input, OpenOption option){
+    Path path =  Paths.get(this.path + filename);
+    try{
+      if(Files.notExists(path)){
+        Files.createFile(path);
+      }
+      Files.write(path, input, StandardCharsets.UTF_8, option);
+    }catch  (IOException e){
+      e.printStackTrace();
+    }
 
   }
 }
