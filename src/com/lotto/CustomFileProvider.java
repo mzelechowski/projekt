@@ -1,14 +1,13 @@
 package com.lotto;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomFileProvider {
@@ -64,6 +63,26 @@ public class CustomFileProvider {
     }catch  (IOException e){
       e.printStackTrace();
     }
-
   }
+  public List<String> createDataFormFile(String fileName){
+    BufferedReader bufferedReader;
+    List<String> output = new ArrayList<>();
+    try {
+      bufferedReader = new BufferedReader(new FileReader(path + fileName));
+      output.add("Początek kopiowania");
+      String line = bufferedReader.readLine();
+      while (line != null) {
+        output.add(line);
+        line=bufferedReader.readLine();
+      }
+      output.add("Koniec kopiowania");
+      bufferedReader.close(); ///////
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return output;
+  }
+//  private void getPagebyUrl(String input){
+//    URL url = new URL(input);
+//  }
 }
