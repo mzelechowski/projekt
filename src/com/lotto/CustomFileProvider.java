@@ -26,6 +26,7 @@ public class CustomFileProvider {
         line = bufferedReader.readLine();
       }
       bufferedReader.close();
+
     } catch (IOException e) {
       //System.out.println(e.getMessage());
       e.printStackTrace(); //drukuje stack błędu
