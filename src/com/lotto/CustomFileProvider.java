@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.OpenOption;
+import java.util.List;
 
 public class CustomFileProvider {
   private final String path;
@@ -25,16 +27,14 @@ public class CustomFileProvider {
         System.out.println(line);
         line = bufferedReader.readLine();
       }
-      bufferedReader.close();
+      bufferedReader.close(); ///////////// zamykanie strumienia plików
 
     } catch (IOException e) {
       //System.out.println(e.getMessage());
+      System.out.println("\n\n!!! error !!! - sprawdź poprawność sciężki\n\n");
       e.printStackTrace(); //drukuje stack błędu
     }
-
-
-    
-  }
+     }
 
   public void writeFileBasic(String fileName) {
     File file = new File(path + fileName);
@@ -48,5 +48,9 @@ public class CustomFileProvider {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+  /** zapisywanie do pliku z podanie wartosci w formie Listr<String> */
+  public void createFileFromCollection(String filename, List<String> input, OpenOption option){
+
   }
 }
