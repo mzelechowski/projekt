@@ -65,6 +65,7 @@ public class CustomFileProvider {
     }
   }
   public List<String> createDataFormFile(String fileName){
+/**buffered to klasa czytają znak po zank z uwzglednieenm konca linii*/
     BufferedReader bufferedReader;
     List<String> output = new ArrayList<>();
     try {
