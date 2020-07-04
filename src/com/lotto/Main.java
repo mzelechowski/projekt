@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 public class Main {
 // jakas zmiananaksnfks
     ///druga zmiana
+    //trzecia zmiana
     public static void main(String[] args) {
         String pathName = "C:/!!baza/";
         String fileName = "bazalotto.txt";
